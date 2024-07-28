@@ -9,7 +9,7 @@ makepkg -si
 cd $returnPath
 
 #flatpak because evrything is shit
-sudo pacman -S flatpak
+yes | sudo pacman -S flatpak
 
 #update yo self madafaka
 sudo pacman -Sy
@@ -20,7 +20,9 @@ flatpak install flathub com.mattjakeman.ExtensionManager
 yay -S yaru-icon-theme yaru-gnome-shell-theme yaru-gtksourceview-theme yaru-gtk-theme yaru-sound-theme ttf-ubuntu-font-family
 
 #gaming
-sudo -S wine lutris steam lib32-alsa-plugins lib32-libpulse lib32-openal
+sudo pacman -S wine lutris steam
+#wine sound packages
+sudo pacman -S lib32-alsa-plugins lib32-libpulse lib32-openal
 
 #advenced features
 sudo pacman -S doublecmd-gtk2 meld bash-completion qpwgraph syncthing zed deluge-gtk piper
@@ -28,6 +30,7 @@ sudo pacman -S doublecmd-gtk2 meld bash-completion qpwgraph syncthing zed deluge
 #common desktop
 sudo pacman -S thunderbird inkscape gimp spotify-launcher
 flatpak install flathub org.ferdium.Ferdium org.onlyoffice.desktopeditors md.obsidian.Obsidian
+yay -S eyedropper
 
 
 ########################
@@ -35,6 +38,7 @@ flatpak install flathub org.ferdium.Ferdium org.onlyoffice.desktopeditors md.obs
 ########################
 
 #rust as service
+rustdesk
 sudo systemctl enable rustdesk.service
 
 #rust as service
